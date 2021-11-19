@@ -83,8 +83,8 @@ const BlockTable = styled.div`
                           <TableTd 
                           style={{cursor: 'pointer'}}
                           onMouseEnter={debounce(() => {
-                              Users.getPostsUser(user.id)
-                          },800)} title={`У пользователя: ${Users.postCount} постов`}>{user.email}</TableTd>
+                              Users.postFetch(user.id)
+                          },200)} title={Users.postCount ? `У пользователя: ${Users.postCount} постов` : ''}>{user.email}</TableTd>
                           <TableTd>{user.gender}</TableTd>
                           <TableTd>{user.status}</TableTd>
                       </TableTr>
